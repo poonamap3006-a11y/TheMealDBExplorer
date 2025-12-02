@@ -1,0 +1,10 @@
+{
+  "/api/meals": {
+    "target": "https://www.themealdb.com",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api/meals": "/api/json/v1/1"
+    }
+  }
+}

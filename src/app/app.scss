@@ -1,0 +1,79 @@
+/* --- Global Reset & Base Styles --- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f9fc; /* Very light, clean background */
+    color: #333;
+}
+
+/* --- Header Styling --- */
+header {
+    background-color: #2c3e50; /* Deep blue/charcoal background */
+    color: white;
+    padding: 15px 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allows wrapping on small screens */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #ecf0f1; /* Light gray heading */
+}
+
+/* --- Navigation Styling --- */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between links and separators */
+}
+
+nav a {
+    color: #e0f2f1; /* Slightly teal-tinted white for links */
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1em;
+    padding: 5px 0;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+/* Separator styling */
+// nav | {
+//     color: #7f8c8d; /* Muted gray for separator */
+// }
+
+nav a:hover {
+    color: #ff6347; /* Tomato red on hover */
+    border-bottom: 2px solid #ff6347;
+}
+
+/* --- Main Content Area --- */
+main {
+    padding: 20px 0;
+    min-height: calc(100vh - 80px); /* Ensures main area fills viewport height */
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px 20px;
+    }
+
+    header h1 {
+        margin-bottom: 10px;
+        font-size: 1.5em;
+    }
+
+    nav {
+        gap: 8px;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,23 @@
+<div class="meal-details-container" *ngIf="meal">
+  <h2>{{meal.strMeal}}</h2>
+  <img [src]="meal.strMealThumb" alt="{{meal.strMeal}}" />
+
+  <h3>Instructions:</h3>
+  <p>{{meal?.strInstructions}}</p>
+
+  <h3>Ingredients:</h3>
+  <ul>
+    <ng-container *ngFor="let i of [].constructor(20); let idx = index">
+    <li *ngIf="meal['strIngredient' + (idx+1)]">
+      <span >
+        {{meal['strIngredient' + (idx+1)]}} - {{meal['strMeasure' + (idx+1)]}}
+      </span>
+    </li>
+    </ng-container>
+    </ul>
+
+  <h3>Video:</h3>
+  <div class="video-container">
+    <iframe [src]="meal.strYoutube | safeUrl" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>

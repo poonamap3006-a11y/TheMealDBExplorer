@@ -1,0 +1,17 @@
+<div class="container">
+<div class="search-bar">
+  <input [(ngModel)]="searchText" placeholder="Search for a meal" (keyup.enter)="searchMeals()"/>
+  <button (click)="searchMeals()">Search</button>
+</div>
+
+<div class="meal-list">
+  <div class="meal-card" *ngFor="let meal of meals">
+    <img [src]="meal.strMealThumb" alt="{{meal.strMeal}}" />
+    <h3>{{meal.strMeal}}</h3>
+    <a [routerLink]="['/meal', meal.idMeal]">View Details</a>
+  </div>
+</div>
+<div class="no-results-message" *ngIf="meals && meals.length === 0 && searchText">
+  <p>😔 Sorry, no meals were found matching. Please try a different search term!</p>
+</div>
+</div>

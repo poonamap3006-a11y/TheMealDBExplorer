@@ -1,0 +1,26 @@
+<div class="category-browser-container">
+    <h2>Browse Meal Categories</h2>
+
+
+    <div class="category-list">
+        <button *ngFor="let category of categories" (click)="onSelectCategory(category.strCategory)"
+            [class.active]="category.strCategory === selectedCategory">
+            {{ category.strCategory }}
+        </button>
+    </div>
+
+    <hr>
+
+    <div *ngIf="selectedCategory" class="meal-results">
+        <h3>Meals in {{ selectedCategory }}</h3>
+        <ng-container *ngIf="filteredMeals">
+        <div *ngFor="let meal of filteredMeals" class="meal-card">
+           <img [src]="meal.strMealThumb" alt="{{meal.strMeal}}">
+            <p>{{ meal.strMeal }}</p> <a [routerLink]="['/meal', meal.idMeal]">View Details</a>
+        </div>
+        </ng-container>
+        <div *ngIf="filteredMeals.length === 0">
+            <p>No meals found in this category.</p>
+        </div>
+    </div>
+</div>
