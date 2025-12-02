@@ -2,8 +2,7 @@
   <h2>{{meal.strMeal}}</h2>
   <img [src]="meal.strMealThumb" alt="{{meal.strMeal}}" />
 
-  <h3>Instructions:</h3>
-  <p>{{meal?.strInstructions}}</p>
+  
 
   <h3>Ingredients:</h3>
   <ul>
@@ -15,6 +14,9 @@
     </li>
     </ng-container>
     </ul>
+    
+    <h3>Instructions:</h3>
+  <p>{{meal?.strInstructions}}</p>
 
   <h3>Video:</h3>
   <div class="video-container">
